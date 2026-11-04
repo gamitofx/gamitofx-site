@@ -1,6 +1,6 @@
 # gamitofx-site
 
-Site da Gamitofx (gamitofx.com). HTML, CSS e JS puros, sem build: qualquer hospedagem estática serve (Vercel, Netlify, Cloudflare Pages).
+Site da Gamitofx (gamitofx.com). HTML, CSS e JS puros, sem build: qualquer hospedagem estática serve (hospedado no Cloudflare Pages; `_headers` define cache e segurança).
 
 - `index.html`: página única (hero, método, trabalhos, serviços, pacotes, processo, checklist grátis, sobre, FAQ).
 - `assets/`: CSS, JS, imagens (WebP), vídeos comprimidos (H.264, faststart) e o PDF do checklist.

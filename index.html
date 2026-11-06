@@ -64,18 +64,17 @@
       "founder": {"@id": "https://gamitofx.pages.dev/#person"},
       "areaServed": "Worldwide",
       "serviceType": ["Video editing", "Short-form video editing", "Motion design", "YouTube thumbnail design"],
-      "priceRange": "$40–$2,060",
+      "priceRange": "$45–$450",
       "hasOfferCatalog": {
         "@type": "OfferCatalog",
-        "name": "Editing packages",
+        "name": "Services",
         "itemListElement": [
-          {"@type": "Offer", "name": "Short video", "price": "75", "priceCurrency": "USD", "description": "30 s to 2 min vertical edit, 2 revisions, 2–3 business days."},
+          {"@type": "Offer", "name": "Short video", "price": "90", "priceCurrency": "USD", "description": "30 s to 2 min vertical edit, 2 revisions, 2–3 business days."},
           {"@type": "Offer", "name": "Long-form video", "price": "450", "priceCurrency": "USD", "description": "8 to 15 min horizontal edit, 2 revisions, 5–7 business days."},
-          {"@type": "Offer", "name": "Thumbnail", "price": "40", "priceCurrency": "USD", "description": "Two versions for A/B testing."},
-          {"@type": "Offer", "name": "Shorts package", "price": "600", "priceCurrency": "USD", "description": "8 short videos per month."},
-          {"@type": "Offer", "name": "Shorts Pro package", "price": "1200", "priceCurrency": "USD", "description": "16 short videos per month."},
-          {"@type": "Offer", "name": "Creator package", "price": "1660", "priceCurrency": "USD", "description": "8 short videos, 2 long-form edits and 4 thumbnails per month."},
-          {"@type": "Offer", "name": "Creator + Strategy package", "price": "2060", "priceCurrency": "USD", "description": "Everything in Creator plus monthly channel strategy."}
+          {"@type": "Offer", "name": "Thumbnail", "price": "45", "priceCurrency": "USD", "description": "Two versions for A/B testing."},
+          {"@type": "Offer", "name": "Channel strategy plan", "price": "395", "priceCurrency": "USD", "description": "One-time written channel audit and a 12-video plan for the next 12 weeks."},
+          {"@type": "Offer", "name": "Monthly channel strategy", "price": "400", "priceCurrency": "USD", "description": "Ongoing strategy for up to 4 long-form videos per month."},
+          {"@type": "Offer", "name": "Retention Sprint", "price": "225", "priceCurrency": "USD", "description": "3 short videos in 5 days, as a paid trial."}
         ]
       }
     },
@@ -93,7 +92,7 @@
         {"@type": "Question", "name": "How fast do I get my edits?", "acceptedAnswer": {"@type": "Answer", "text": "Short videos in 2–3 business days. Long-form videos in 5–7 business days."}},
         {"@type": "Question", "name": "How many revisions are included?", "acceptedAnswer": {"@type": "Answer", "text": "Two rounds of revisions per video. You leave time-stamped comments on the video and I apply them."}},
         {"@type": "Question", "name": "Do we need calls?", "acceptedAnswer": {"@type": "Answer", "text": "No. Everything runs async and in writing: a short brief form, comments on the video and messages. You never have to schedule a meeting."}},
-        {"@type": "Question", "name": "Do I have to sign a long contract?", "acceptedAnswer": {"@type": "Answer", "text": "No. Your first month can be monthly, as a test. Discounts of 15%, 20% or 30% apply when you choose a 3, 6 or 12-month plan."}},
+        {"@type": "Question", "name": "Do I have to sign a long contract?", "acceptedAnswer": {"@type": "Answer", "text": "No. You can order a single video. A 3, 6 or 12-month contract takes an extra 5%, 10% or 15% off your price."}},
         {"@type": "Question", "name": "What do you need from me?", "acceptedAnswer": {"@type": "Answer", "text": "Your raw footage (up to 15 minutes for a short, up to 2 hours for a long-form video), your logo and fonts if you have them, and links to creators whose style you like."}},
         {"@type": "Question", "name": "Do you have a referral program?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. Refer a creator and you get 40% off your next month once they pay their first month."}}
       ]
@@ -235,11 +234,11 @@
   <section class="section" id="services" aria-labelledby="services-t">
     <div class="wrap">
       <p class="label">Services</p>
-      <h2 id="services-t">Pay per video, or save with a monthly package</h2>
+      <h2 id="services-t">One price per service. <em>Order more, pay less.</em></h2>
       <div class="grid4">
         <article class="card svc">
           <h3>Short video</h3>
-          <p class="price"><span>$75</span> / video</p>
+          <p class="price"><span>$90</span> / video</p>
           <p>Vertical, 30 s to 2 min. Raw footage up to 15 min. Hook rewrite, animated captions, 2D motion, color, audio, music and SFX.</p>
           <p class="meta mono">2 revisions · 2–3 business days</p>
         </article>
@@ -251,15 +250,15 @@
         </article>
         <article class="card svc">
           <h3>Thumbnail</h3>
-          <p class="price"><span>$40</span> / thumbnail</p>
+          <p class="price"><span>$45</span> / thumbnail</p>
           <p>Concept, design and text. Two versions so you can A/B test them on YouTube.</p>
           <p class="meta mono">2 versions</p>
         </article>
         <article class="card svc">
           <h3>Channel strategy</h3>
-          <p class="price"><span>$400</span> / month</p>
-          <p>Channel diagnosis, topics, hooks and titles, retention-focused scripts and a monthly metrics review.</p>
-          <p class="meta mono">Monthly</p>
+          <p class="price"><span>$395</span> / plan</p>
+          <p>A written audit of your last 20 videos, your positioning and 5 competitors, plus a 12-video plan for the next 12 weeks. Ongoing strategy after that: $400 / month.</p>
+          <p class="meta mono">One-time plan · 5 business days</p>
         </article>
       </div>
     </div>
@@ -268,58 +267,30 @@
   <!-- PRICING -->
   <section class="section" id="pricing" aria-labelledby="pricing-t">
     <div class="wrap">
-      <p class="label">Packages</p>
-      <h2 id="pricing-t">Monthly packages. <em>Longer plans, lower price.</em></h2>
-      <div class="plans" role="radiogroup" aria-label="Plan length">
-        <button type="button" role="radio" aria-checked="true" data-plan="0" data-months="1">Monthly</button>
-        <button type="button" role="radio" aria-checked="false" data-plan="0.15" data-months="3">3 months <span>−15%</span></button>
-        <button type="button" role="radio" aria-checked="false" data-plan="0.20" data-months="6">6 months <span>−20%</span></button>
-        <button type="button" role="radio" aria-checked="false" data-plan="0.30" data-months="12">12 months <span>−30%</span></button>
-      </div>
-      <div class="grid4 pkgs">
-        <article class="card pkg" data-base="600">
-          <h3>Shorts</h3>
-          <p class="pkg__price"><span class="amt">$600</span><small>/ month</small></p>
-          <p class="pkg__save mono" aria-live="polite">&nbsp;</p>
-          <ul class="ticks">
-            <li>8 short videos per month</li>
-            <li>Hook rewrite, animated captions, 2D motion</li>
-            <li>2 revisions per video</li>
-          </ul>
+      <p class="label">Discounts</p>
+      <h2 id="pricing-t">More videos, lower price. <em>Longer contract, lower still.</em></h2>
+      <div class="tiers">
+        <article class="card">
+          <h3>Videos per order</h3>
+          <dl class="tier">
+            <div><dt>1–3 videos</dt><dd>List price</dd></div>
+            <div><dt>4–7 videos</dt><dd>−10%</dd></div>
+            <div><dt>8–15 videos</dt><dd>−15%</dd></div>
+            <div><dt>16+ videos</dt><dd>−20%</dd></div>
+          </dl>
         </article>
-        <article class="card pkg" data-base="1200">
-          <h3>Shorts Pro</h3>
-          <p class="pkg__price"><span class="amt">$1,200</span><small>/ month</small></p>
-          <p class="pkg__save mono" aria-live="polite">&nbsp;</p>
-          <ul class="ticks">
-            <li>16 short videos per month</li>
-            <li>Hook rewrite, animated captions, 2D motion</li>
-            <li>2 revisions per video</li>
-          </ul>
-        </article>
-        <article class="card pkg pkg--best" data-base="1660">
-          <span class="badge">Best fit</span>
-          <h3>Creator</h3>
-          <p class="pkg__price"><span class="amt">$1,660</span><small>/ month</small></p>
-          <p class="pkg__save mono" aria-live="polite">&nbsp;</p>
-          <ul class="ticks">
-            <li>8 short videos + 2 long-form edits</li>
-            <li>4 thumbnails (A/B versions)</li>
-            <li>Motion with your brand identity</li>
-          </ul>
-        </article>
-        <article class="card pkg" data-base="2060">
-          <h3>Creator + Strategy</h3>
-          <p class="pkg__price"><span class="amt">$2,060</span><small>/ month</small></p>
-          <p class="pkg__save mono" aria-live="polite">&nbsp;</p>
-          <ul class="ticks">
-            <li>Everything in Creator</li>
-            <li>Monthly channel strategy and hooks</li>
-            <li>Scripts focused on retention</li>
-          </ul>
+        <article class="card">
+          <h3>Contract length</h3>
+          <dl class="tier">
+            <div><dt>No contract</dt><dd>No extra discount</dd></div>
+            <div><dt>3 months</dt><dd>−5% more</dd></div>
+            <div><dt>6 months</dt><dd>−10% more</dd></div>
+            <div><dt>12 months</dt><dd>−15% more</dd></div>
+          </dl>
         </article>
       </div>
-      <p class="note">Your first month can be monthly, as a test. Prices in USD. Refer a creator and get 40% off your next month.</p>
+      <p class="note">Example: 12 shorts, 4 long-form videos and 4 thumbnails are $3,060 at list price, $2,448 with the volume discount and $2,203 per month on a 6-month contract.</p>
+      <p class="note">Every channel is different, so you get a custom quote based on what you publish. Want to try first? The Retention Sprint is 3 short videos in 5 days for $225, credited to your first month if you continue within 14 days. Prices in USD. Refer a creator and get 40% off your next month.</p>
       <div class="center"><a class="btn" href="https://ig.me/m/gamitofx" target="_blank" rel="noopener" data-track="cta_pricing">Send me EDIT to start</a></div>
     </div>
   </section>
@@ -373,7 +344,7 @@
       <details><summary>How fast do I get my edits?</summary><p>Short videos in 2–3 business days. Long-form videos in 5–7 business days.</p></details>
       <details><summary>How many revisions are included?</summary><p>Two rounds of revisions per video. You leave time-stamped comments on the video and I apply them.</p></details>
       <details><summary>Do we need calls?</summary><p>No. Everything runs async and in writing: a short brief form, comments on the video and messages. You never have to schedule a meeting.</p></details>
-      <details><summary>Do I have to sign a long contract?</summary><p>No. Your first month can be monthly, as a test. Discounts of 15%, 20% or 30% apply when you choose a 3, 6 or 12-month plan.</p></details>
+      <details><summary>Do I have to sign a long contract?</summary><p>No. You can order a single video. A 3, 6 or 12-month contract takes an extra 5%, 10% or 15% off your price.</p></details>
       <details><summary>What do you need from me?</summary><p>Your raw footage (up to 15 minutes for a short, up to 2 hours for a long-form video), your logo and fonts if you have them, and links to creators whose style you like.</p></details>
       <details><summary>Do you have a referral program?</summary><p>Yes. Refer a creator and you get 40% off your next month once they pay their first month.</p></details>
     </div>

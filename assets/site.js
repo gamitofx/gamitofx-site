@@ -1,26 +1,5 @@
-// Plan length toggle: recalculates package prices from the monthly base.
+// Analytics and click-to-play video.
 (function () {
-  var buttons = document.querySelectorAll('.plans [data-plan]');
-  var pkgs = document.querySelectorAll('.pkg[data-base]');
-  var usd = function (n) { return '$' + Math.round(n).toLocaleString('en-US'); };
-
-  function apply(btn) {
-    var off = parseFloat(btn.getAttribute('data-plan'));
-    var months = parseInt(btn.getAttribute('data-months'), 10);
-    buttons.forEach(function (b) { b.setAttribute('aria-checked', b === btn ? 'true' : 'false'); });
-    pkgs.forEach(function (p) {
-      var base = parseFloat(p.getAttribute('data-base'));
-      p.querySelector('.amt').textContent = usd(base * (1 - off));
-      p.querySelector('.pkg__save').textContent = off > 0
-        ? 'Save ' + usd(base * off * months) + ' over ' + months + ' months'
-        : ' ';
-    });
-  }
-
-  buttons.forEach(function (b) {
-    b.addEventListener('click', function () { apply(b); track('plan_select', {months: b.getAttribute('data-months')}); });
-  });
-
   // Analytics events (work once GA4 is installed; no-op before that).
   function track(name, params) {
     if (typeof window.gtag === 'function') window.gtag('event', name, params || {});

@@ -10,11 +10,12 @@
   let tt;
   const toast = (msg) => { toastEl.textContent = msg; toastEl.classList.add('on'); clearTimeout(tt); tt = setTimeout(() => toastEl.classList.remove('on'), 2400); };
 
-  /* scroll progress */
-  const prog = $('#prog');
+  /* scroll progress + header hairline */
+  const prog = $('#prog'), head = $('#head');
   const onScroll = () => {
     const h = document.documentElement.scrollHeight - innerHeight;
     prog.style.transform = `scaleX(${h > 0 ? Math.min(1, scrollY / h) : 0})`;
+    head.classList.toggle('sc', scrollY > 8);
   };
   addEventListener('scroll', onScroll, { passive: true }); onScroll();
 
@@ -31,7 +32,17 @@
   addEventListener('keydown', e => { if (e.key === 'Escape' && body.classList.contains('menu-open')) { setMenu(false); burger.focus(); } });
   matchMedia('(min-width:900px)').addEventListener('change', e => e.matches && setMenu(false));
 
-  /* reveal */
+  /* active section in the nav */
+  const navLinks = $$('.nav a');
+  if ('IntersectionObserver' in window) {
+    const spy = new IntersectionObserver(es => es.forEach(e => {
+      if (!e.isIntersecting) return;
+      navLinks.forEach(a => a.classList.toggle('on', a.getAttribute('href') === `#${e.target.id}`));
+    }), { rootMargin: '-45% 0px -50% 0px' });
+    $$('main section[id]').forEach(s => spy.observe(s));
+  }
+
+  /* reveal (section titles only) */
   const rv = $$('.rv');
   if (reduce || !('IntersectionObserver' in window)) rv.forEach(el => el.classList.add('seen'));
   else {
@@ -65,6 +76,7 @@
       f.allow = 'autoplay; encrypted-media; picture-in-picture; fullscreen';
       f.allowFullscreen = true;
       thumb.appendChild(f);
+      thumb.classList.add('live');
     }
     return f;
   };
@@ -77,11 +89,20 @@
     items.forEach(x => {
       const on = x === it;
       x.classList.toggle('on', on);
-      $('.k', x).textContent = on ? '▶ NOW PLAYING' : `0${+x.dataset.i + 1} · ${x.dataset.tag}`;
+      x.setAttribute('aria-pressed', on);
+      $('.k', x).textContent = on ? 'Now playing' : x.dataset.tag;
     });
     const old = $('iframe', thumb); if (old) old.remove();
+    thumb.classList.remove('live');
     yt = it.dataset.yt; ytTitle = it.dataset.title;
-    $('img', thumb).src = it.dataset.poster;
+    /* poster crossfade */
+    const img = $('img', thumb);
+    if (img.getAttribute('src') !== it.dataset.poster) {
+      const next = new Image(); next.src = it.dataset.poster;
+      img.classList.add('swap');
+      const show = () => { img.src = it.dataset.poster; img.alt = it.dataset.alt || ''; requestAnimationFrame(() => img.classList.remove('swap')); };
+      Promise.all([next.decode ? next.decode().catch(() => {}) : null, new Promise(r => setTimeout(r, reduce ? 0 : 200))]).then(show);
+    }
     $('.tag', thumb).textContent = it.dataset.tag;
     $('.dur', thumb).textContent = it.dataset.dur;
     play.setAttribute('aria-label', `Play: ${ytTitle}`);
@@ -93,7 +114,7 @@
     select(0);
     setLink();
   };
-  items.forEach(it => it.addEventListener('click', () => pick(it)));
+  items.forEach(it => it.addEventListener('click', () => { if (!it.classList.contains('on')) pick(it); }));
 
   /* shorts carousel */
   const car = $('#car'), cards = $$('.vc', car), dots = $$('#dots i');
@@ -125,7 +146,7 @@
     if (id) {
       const f = document.createElement('iframe');
       f.src = `https://www.youtube-nocookie.com/embed/${id}?autoplay=1&rel=0&playsinline=1&loop=1&playlist=${id}`;
-      f.title = $('h4', c).textContent;
+      f.title = $('h3', c).textContent;
       f.allow = 'autoplay; encrypted-media; picture-in-picture; fullscreen';
       f.allowFullscreen = true;
       $('.im', c).appendChild(f);
@@ -152,7 +173,7 @@
   const openSheet = (card) => {
     const s = data[card.dataset.sb]; if (!s) return;
     openCard = card;
-    $('#sh-l').textContent = `Storyboard · ${s.d}`;
+    $('#sh-l').innerHTML = `Storyboard · <span class="mono">${s.d}</span>`;
     $('#sh-t').textContent = s.t;
     $('#sh-d').textContent = s.x;
     $('#sh-f').innerHTML = s.f.map(([img, tc, b, p]) =>
@@ -191,6 +212,25 @@
     location.href = `mailto:joaogamitomkt@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(text)}`;
     toast('Opening your e-mail app…');
   });
+
+  /* combined followers: counts up once when it enters the screen */
+  const total = $('#total');
+  if (total && !reduce && 'IntersectionObserver' in window) {
+    const to = +total.dataset.to;
+    total.textContent = '0K+';
+    const co = new IntersectionObserver(es => {
+      if (!es[0].isIntersecting) return;
+      co.disconnect();
+      const t0 = performance.now(), dur = 1100;
+      const tick = (t) => {
+        const p = Math.min(1, (t - t0) / dur), e = 1 - Math.pow(1 - p, 4);
+        total.textContent = `${Math.round(to * e)}K+`;
+        if (p < 1) requestAnimationFrame(tick);
+      };
+      requestAnimationFrame(tick);
+    }, { threshold: .6 });
+    co.observe(total);
+  }
 
   /* giant wordmark: always fits the container */
   const giant = $('#giant');

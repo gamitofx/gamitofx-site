@@ -34,7 +34,7 @@
 <!-- Fonts -->
 <link rel="preload" href="/assets/fonts/sora-var.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="/assets/fonts/inter-var.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="/assets/site.css?v=20261112a">
+<link rel="stylesheet" href="/assets/site.css?v=20261112b">
 
 <!-- Google Analytics (GA4): paste the tag here when the property is created -->
 <!-- Microsoft Clarity: paste the install code here when the project is created -->
@@ -80,13 +80,8 @@
 <body>
 <a class="skip" href="#main">Skip to content</a>
 <div class="bg-grid" aria-hidden="true"></div>
-<div class="glows" aria-hidden="true">
-<div class="glow" aria-hidden="true" style="width:380px;height:380px;background:rgba(31,199,178,.14);top:-140px;right:-120px"></div>
-<div class="glow" aria-hidden="true" style="width:320px;height:320px;background:rgba(31,140,199,.08);top:1000px;left:-200px"></div>
-<div class="glow" aria-hidden="true" style="width:320px;height:320px;background:rgba(31,199,178,.07);top:3100px;right:-200px"></div>
-</div>
 
-<header class="head">
+<header class="head" id="head">
   <div class="wrap">
     <a class="brand" href="#top" aria-label="GamitoFX, back to top">
       <img class="logo" src="/assets/img/gamitofx-96.webp" width="36" height="36" alt="">
@@ -120,14 +115,14 @@
 <!-- HERO -->
 <section class="wrap hero" id="top">
   <div>
-    <div class="pill"><span class="d live"></span>Video editor &amp; content strategist</div>
-    <h1>Videos people watch <span class="g">to the</span> end<span class="dot">.</span></h1>
-    <div class="niche"><div class="k">I EDIT FOR</div><div class="v">Educational creators <span>·</span> SaaS <span>&amp;</span> apps</div></div>
+    <p class="eyebrow">Video editor &amp; content strategist</p>
+    <h1 class="rv">Videos people watch to the end<span class="dot">.</span></h1>
+    <div class="niche"><div class="k">I edit for</div><div class="v">Educational creators <span>·</span> SaaS <span>&amp;</span> apps</div></div>
   </div>
   <div>
     <div class="watch">
-      <a class="wt" href="#long"><div class="ic"><div class="shape" style="width:30px;height:19px"></div><span class="ar" aria-hidden="true">↓</span></div><div><b>Long-form</b><small>YOUTUBE · 16:9</small></div></a>
-      <a class="wt" href="#short"><div class="ic"><div class="shape" style="width:17px;height:27px"></div><span class="ar" aria-hidden="true">↓</span></div><div><b>Short-form</b><small>REELS · SHORTS · 9:16</small></div></a>
+      <a class="wt" href="#long"><div class="ic"><div class="shape" style="width:30px;height:19px"></div><span class="ar" aria-hidden="true">↓</span></div><div><b>Long-form</b><small>YouTube · <span class="mono">16:9</span></small></div></a>
+      <a class="wt" href="#short"><div class="ic"><div class="shape" style="width:17px;height:27px"></div><span class="ar" aria-hidden="true">↓</span></div><div><b>Short-form</b><small>Reels · Shorts · <span class="mono">9:16</span></small></div></a>
     </div>
     <a class="trust" href="#clients">
       <div class="stack" aria-hidden="true"><img src="/assets/img/clients/diogo.webp" width="28" height="28" alt=""><img src="/assets/img/clients/store.webp" width="28" height="28" alt=""><img src="/assets/img/clients/cavalaria.webp" width="28" height="28" alt=""><img src="/assets/img/clients/tais.webp" width="28" height="28" alt=""></div>
@@ -138,90 +133,90 @@
 
 <!-- LONG-FORM -->
 <section class="wrap lf" id="long" aria-labelledby="lf-t">
-  <div class="shead rv"><div class="pill"><span class="d"></span>Long-form videos</div><span class="idx"><b>01</b> / 04</span></div>
-  <h2 class="rv" id="lf-t"><span class="g">Talking-heads that</span> hold attention</h2>
-  <p class="sub rv">Tap a video to watch. Open the storyboard to see how it was built.</p>
+  <div class="shead"><span class="sname">Long-form videos</span><span class="idx"><b>01</b> / 04</span></div>
+  <h2 class="rv" id="lf-t">Talking-heads that hold attention</h2>
+  <p class="sub">Tap a video to watch. Open the storyboard to see how it was built.</p>
   <div class="lfg">
-    <article class="card player rv">
-      <div class="thumb" id="lf-thumb">
-        <img src="/assets/img/krishi-poster.webp" width="1280" height="720" alt="Frame from the edit: a polaroid checklist next to the speaker">
+    <article class="card player">
+      <div class="thumb fm" id="lf-thumb">
+        <img src="/assets/img/poster-microaudiences.webp" width="1280" height="720" alt="Frame from the edit: hand-drawn diagram over the speaker">
         <div class="shade"></div>
-        <span class="tag">SPEC EDIT</span>
-        <button class="play" id="lf-play" data-yt="2nMF9-UXEYw" aria-label="Play: The Psychological Productivity Hacks That Actually Rewire Your Brain"></button>
-        <span class="dur">16:31</span>
-        <div class="bar" aria-hidden="true"><u style="left:9%"></u><u style="left:28%"></u><u style="left:45%"></u><u style="left:62%"></u><u style="left:94%"></u></div>
+        <span class="tag">Spec edit</span>
+        <button class="play" id="lf-play" data-yt="0jx_jV0DFq4" aria-label="Play: MicroAudiences · SPEC concept"></button>
+        <span class="dur">15:04</span>
+        <div class="bar" aria-hidden="true" hidden><u style="left:9%"></u><u style="left:28%"></u><u style="left:45%"></u><u style="left:62%"></u><u style="left:94%"></u></div>
       </div>
-      <div class="seg" role="tablist" aria-label="Video or storyboard">
+      <div class="seg" role="tablist" aria-label="Video or storyboard" style="display:none">
         <button role="tab" id="tab-v" aria-selected="true" aria-controls="pv"><svg class="ico" viewBox="0 0 24 24"><path d="M7 4l13 8-13 8z"/></svg>Video</button>
         <button role="tab" id="tab-s" aria-selected="false" aria-controls="ps" tabindex="-1"><svg class="ico" viewBox="0 0 24 24"><rect x="3" y="4" width="7" height="7" rx="1.5"/><rect x="14" y="4" width="7" height="7" rx="1.5"/><rect x="3" y="14" width="7" height="7" rx="1.5"/><rect x="14" y="14" width="7" height="7" rx="1.5"/></svg>Storyboard</button>
       </div>
       <div class="pinfo" id="pv" role="tabpanel" aria-labelledby="tab-v">
-        <div class="now"><span class="d"></span>NOW SHOWING</div>
-        <h3>The Psychological Productivity Hacks That Actually Rewire Your Brain</h3>
-        <div class="meta"><span>Psychology</span><span>Spec edit · Krishi Ahuja</span><span>5 chapters</span></div>
+        <div class="now">Now showing</div>
+        <h3>MicroAudiences · SPEC concept</h3>
+        <div class="meta"><span>Paid ads</span><span>Spec edit · Alex Becker</span><span>Hand-drawn diagrams</span></div>
         <div class="rowb"><button class="chip" id="lf-full">⤢ Full screen</button><a class="chip" id="lf-yt" href="#long" target="_blank" rel="noopener">Watch on YouTube ↗</a></div>
       </div>
       <div class="sb" id="ps" role="tabpanel" aria-labelledby="tab-s" hidden>
         <div class="sbh"><span class="lbl"><b>01</b> · The brief</span></div>
         <p class="brief">17 minutes of one camera, already cut and captioned. <span class="mut">Goal: keep the calm tone and give the viewer a structure to follow.</span></p>
-        <div class="sbh"><span class="lbl"><b>02</b> · The look</span><span class="lbl">from the creator's brand</span></div>
+        <div class="sbh"><span class="lbl"><b>02</b> · The look</span><span class="lbl">from the creator’s brand</span></div>
         <div class="look"><div class="sw" style="background:#F4ECDF" title="Paper cream"></div><div class="sw" style="background:#7B1E22" title="Deep red"></div><div class="sw" style="background:#3B2A25" title="Ink brown"></div><div class="sw" style="background:#fff" title="White"></div><div class="fonts">Paper, washi tape, polaroids<br>Poppins · Allura · Playfair</div></div>
         <div class="sbh"><span class="lbl"><b>03</b> · Storyboard</span><span class="lbl">swipe →</span></div>
         <div class="tl"><div class="strip" tabindex="0" aria-label="Storyboard frames">
-          <div class="fr"><div class="im"><img src="/assets/img/sb/krishi-5.webp" width="480" height="270" alt="" loading="lazy"><span class="tc">0:05</span></div><b>Hook: two people</b><p>Same age, same city. Two characters make the contrast visible from the first second.</p></div>
-          <div class="fr"><div class="im"><img src="/assets/img/sb/krishi-20.webp" width="480" height="270" alt="" loading="lazy"><span class="tc">0:20</span></div><b>The checklist</b><p>One item ticks per sentence, on the spoken word.</p></div>
-          <div class="fr"><div class="im"><img src="/assets/img/sb/krishi-75.webp" width="480" height="270" alt="" loading="lazy"><span class="tc">1:15</span></div><b>The reveal</b><p>The keyword lands on the beat of the line.</p></div>
-          <div class="fr"><div class="im"><img src="/assets/img/sb/krishi-340.webp" width="480" height="270" alt="" loading="lazy"><span class="tc">5:40</span></div><b>Study card</b><p>Research shows up as a note card, with numbers only when they're said.</p></div>
-          <div class="fr"><div class="im"><img src="/assets/img/sb/krishi-960.webp" width="480" height="270" alt="" loading="lazy"><span class="tc">16:00</span></div><b>The close</b><p>Short, bold words carry the call to action.</p></div>
+          <div class="fr"><div class="im fm"><img src="/assets/img/sb/krishi-5.webp" width="480" height="270" alt="" loading="lazy"><span class="tc">0:05</span></div><b>Hook: two people</b><p>Same age, same city. Two characters make the contrast visible from the first second.</p></div>
+          <div class="fr"><div class="im fm"><img src="/assets/img/sb/krishi-20.webp" width="480" height="270" alt="" loading="lazy"><span class="tc">0:20</span></div><b>The checklist</b><p>One item ticks per sentence, on the spoken word.</p></div>
+          <div class="fr"><div class="im fm"><img src="/assets/img/sb/krishi-75.webp" width="480" height="270" alt="" loading="lazy"><span class="tc">1:15</span></div><b>The reveal</b><p>The keyword lands on the beat of the line.</p></div>
+          <div class="fr"><div class="im fm"><img src="/assets/img/sb/krishi-340.webp" width="480" height="270" alt="" loading="lazy"><span class="tc">5:40</span></div><b>Study card</b><p>Research shows up as a note card, with numbers only when they’re said.</p></div>
+          <div class="fr"><div class="im fm"><img src="/assets/img/sb/krishi-960.webp" width="480" height="270" alt="" loading="lazy"><span class="tc">16:00</span></div><b>The close</b><p>Short, bold words carry the call to action.</p></div>
         </div></div>
         <div class="sbh"><span class="lbl"><b>04</b> · The process</span></div>
         <div class="flow"><span class="chip">Transcript</span><em>→</em><span class="chip">Structure</span><em>→</em><span class="chip">Look</span><em>→</em><span class="chip">Storyboard</span><em>→</em><span class="chip">Cuts</span><em>→</em><span class="chip">Motion</span><em>→</em><span class="chip">Sound</span><em>→</em><span class="chip">Review</span></div>
         <div class="sbh"><span class="lbl"><b>05</b> · By the numbers</span></div>
-        <div class="nums"><div class="num"><b>5</b><span>chapter cards so viewers know where they are</span></div><div class="num"><b>~80</b><span>motion moments timed to the voice</span></div><div class="num"><b>7</b><span>music cues, one per section</span></div><div class="num"><b>−14</b><span>LUFS, YouTube's loudness target</span></div></div>
+        <div class="nums"><div class="num"><b>5</b><span>chapter cards so viewers know where they are</span></div><div class="num"><b>~80</b><span>motion moments timed to the voice</span></div><div class="num"><b>7</b><span>music cues, one per section</span></div><div class="num"><b>−14</b><span>LUFS, YouTube’s loudness target</span></div></div>
       </div>
     </article>
-    <div class="rv">
-      <div class="upn"><span class="lbl">Up next</span><span class="cnt">2 VIDEOS</span></div>
-      <button type="button" class="card item on" data-i="0" data-yt="2nMF9-UXEYw" data-poster="/assets/img/krishi-poster.webp" data-title="The Psychological Productivity Hacks That Actually Rewire Your Brain" data-dur="16:31" data-tag="SPEC EDIT" data-meta="Psychology|Spec edit · Krishi Ahuja|5 chapters" data-sb="1"><div class="t"><img src="/assets/img/sb/krishi-640.webp" width="480" height="270" alt="" loading="lazy"><span class="n">01</span></div><div><div class="k">▶ NOW PLAYING</div><h4>The Psychological Productivity Hacks…</h4><div class="m">Psychology · 16:31</div></div></button>
-      <button type="button" class="card item" data-i="1" data-yt="0jx_jV0DFq4" data-poster="/assets/img/poster-microaudiences.webp" data-title="MicroAudiences · SPEC concept" data-dur="15:04" data-tag="SPEC EDIT" data-meta="Paid ads|Spec edit|Hand-drawn diagrams" data-sb="0"><div class="t"><img src="/assets/img/sb/microaudiences-640.webp" width="480" height="270" alt="" loading="lazy"><span class="n">02</span></div><div><div class="k">02 · SPEC EDIT</div><h4>MicroAudiences · SPEC concept</h4><div class="m">Paid ads · 15:04</div></div></button>
-      <a class="card item slot" href="#contact"><div class="t" aria-hidden="true">+</div><div><div class="k">03 · YOUR VIDEO</div><h4>Your next long-form</h4><div class="m">Send me the raw footage →</div></div></a>
+    <div>
+      <div class="upn"><span class="lbl">Up next</span><span class="cnt"><span class="mono">2</span> videos</span></div>
+      <button type="button" class="card item on" data-i="0" data-yt="0jx_jV0DFq4" data-poster="/assets/img/poster-microaudiences.webp" data-alt="Frame from the edit: hand-drawn diagram over the speaker" data-title="MicroAudiences · SPEC concept" data-dur="15:04" data-tag="Spec edit" data-meta="Paid ads|Spec edit · Alex Becker|Hand-drawn diagrams" data-sb="0" aria-pressed="true"><div class="t"><img src="/assets/img/sb/microaudiences-640.webp" width="480" height="270" alt="" loading="lazy"><span class="n">01</span></div><div><div class="k">Now playing</div><h3>MicroAudiences · SPEC concept</h3><div class="m">Paid ads · <span class="mono">15:04</span></div></div></button>
+      <button type="button" class="card item" data-i="1" data-yt="2nMF9-UXEYw" data-poster="/assets/img/krishi-poster.webp" data-alt="Frame from the edit: a polaroid checklist next to the speaker" data-title="The Psychological Productivity Hacks That Actually Rewire Your Brain" data-dur="16:31" data-tag="Spec edit" data-meta="Psychology|Spec edit · Krishi Ahuja|5 chapters" data-sb="1" aria-pressed="false"><div class="t"><img src="/assets/img/sb/krishi-640.webp" width="480" height="270" alt="" loading="lazy"><span class="n">02</span></div><div><div class="k">Spec edit</div><h3>The Psychological Productivity Hacks…</h3><div class="m">Psychology · <span class="mono">16:31</span></div></div></button>
+      <a class="nextline" href="#contact">Your next long-form? <span>Send me the raw footage →</span></a>
     </div>
   </div>
 </section>
 
 <!-- SHORT-FORM -->
 <section class="wrap sf" id="short" aria-labelledby="sf-t">
-  <div class="shead rv"><div class="pill"><span class="d"></span>Short-form</div><span class="idx"><b>02</b> / 04</span></div>
-  <h2 class="rv" id="sf-t"><span class="g">Built for the</span> first 3 seconds</h2>
-  <div class="arrows rv"><button id="prev" aria-label="Previous video">←</button><button id="next" aria-label="Next video">→</button></div>
+  <div class="shead"><span class="sname">Short-form</span><span class="idx"><b>02</b> / 04</span></div>
+  <h2 class="rv" id="sf-t">Built for the first 3 seconds</h2>
+  <div class="arrows"><button id="prev" aria-label="Previous video">←</button><button id="next" aria-label="Next video">→</button></div>
   <div class="car" id="car">
     <article class="vc" data-yt="mcOcZiGw96A">
-      <div class="im"><video poster="/assets/img/poster-microaudiences-short.webp" preload="none" playsinline width="720" height="1280"></video><button class="hit" aria-label="Play: MicroAudiences, spec teaser"></button><span class="pp" aria-hidden="true"></span></div>
-      <div class="ov"><div class="k">SPEC · TEASER</div><h4>MicroAudiences · spec teaser</h4></div>
+      <div class="im fm"><video poster="/assets/img/poster-microaudiences-short.webp" preload="none" playsinline width="720" height="1280"></video><button class="hit" aria-label="Play: MicroAudiences, spec teaser"></button><span class="pp" aria-hidden="true"></span></div>
+      <div class="ov"><div class="k">Spec · teaser</div><h3>MicroAudiences · spec teaser</h3></div>
     </article>
     <article class="vc" data-sb="sorg" data-yt="knkTJ7WWLGc">
-      <div class="im"><video poster="/assets/img/poster-chris-sorg.webp" preload="none" playsinline width="720" height="1280"></video><button class="hit" aria-label="Play: Why every founder brand looks the same"></button><span class="pp" aria-hidden="true"></span></div>
-      <div class="ov"><div class="k">SPEC · CHRIS SORG × MERKION · 0:37</div><h4>Why every founder brand looks the same</h4><button class="chip sbo"><svg class="ico" viewBox="0 0 24 24" style="color:var(--ac)"><rect x="3" y="4" width="7" height="7" rx="1.5"/><rect x="14" y="4" width="7" height="7" rx="1.5"/><rect x="3" y="14" width="7" height="7" rx="1.5"/><rect x="14" y="14" width="7" height="7" rx="1.5"/></svg>Storyboard</button></div>
+      <div class="im fm"><video poster="/assets/img/poster-chris-sorg.webp" preload="none" playsinline width="720" height="1280"></video><button class="hit" aria-label="Play: Why every founder brand looks the same"></button><span class="pp" aria-hidden="true"></span></div>
+      <div class="ov"><div class="k">Spec · Chris Sorg × Merkion · <span class="mono">0:37</span></div><h3>Why every founder brand looks the same</h3><button class="chip sbo"><svg class="ico" viewBox="0 0 24 24"><rect x="3" y="4" width="7" height="7" rx="1.5"/><rect x="14" y="4" width="7" height="7" rx="1.5"/><rect x="3" y="14" width="7" height="7" rx="1.5"/><rect x="14" y="14" width="7" height="7" rx="1.5"/></svg>Storyboard</button></div>
     </article>
     <article class="vc" data-sb="same" data-yt="r2tArMUf2h0">
-      <div class="im"><video poster="/assets/img/poster-same-script-v2.webp" preload="none" playsinline width="720" height="1280"></video><button class="hit" aria-label="Play: Same script. Two edits."></button><span class="pp" aria-hidden="true"></span></div>
-      <div class="ov"><div class="k">BEFORE / AFTER · 0:33</div><h4>Same script. Two edits.</h4><button class="chip sbo"><svg class="ico" viewBox="0 0 24 24" style="color:var(--ac)"><rect x="3" y="4" width="7" height="7" rx="1.5"/><rect x="14" y="4" width="7" height="7" rx="1.5"/><rect x="3" y="14" width="7" height="7" rx="1.5"/><rect x="14" y="14" width="7" height="7" rx="1.5"/></svg>Storyboard</button></div>
+      <div class="im fm"><video poster="/assets/img/poster-same-script-v2.webp" preload="none" playsinline width="720" height="1280"></video><button class="hit" aria-label="Play: Same script. Two edits."></button><span class="pp" aria-hidden="true"></span></div>
+      <div class="ov"><div class="k">Before / after · <span class="mono">0:33</span></div><h3>Same script. Two edits.</h3><button class="chip sbo"><svg class="ico" viewBox="0 0 24 24"><rect x="3" y="4" width="7" height="7" rx="1.5"/><rect x="14" y="4" width="7" height="7" rx="1.5"/><rect x="3" y="14" width="7" height="7" rx="1.5"/><rect x="14" y="14" width="7" height="7" rx="1.5"/></svg>Storyboard</button></div>
     </article>
     <article class="vc" data-sb="ui" data-yt="V-cjwoHcC1Y">
-      <div class="im"><video poster="/assets/img/poster-ui-premium.webp" preload="none" playsinline width="720" height="1280"></video><button class="hit" aria-label="Play: 3 details that make a UI animation feel premium"></button><span class="pp" aria-hidden="true"></span></div>
-      <div class="ov"><div class="k">SAAS · UI MOTION · 0:33</div><h4>3 details that make a UI animation feel premium</h4><button class="chip sbo"><svg class="ico" viewBox="0 0 24 24" style="color:var(--ac)"><rect x="3" y="4" width="7" height="7" rx="1.5"/><rect x="14" y="4" width="7" height="7" rx="1.5"/><rect x="3" y="14" width="7" height="7" rx="1.5"/><rect x="14" y="14" width="7" height="7" rx="1.5"/></svg>Storyboard</button></div>
+      <div class="im fm"><video poster="/assets/img/poster-ui-premium.webp" preload="none" playsinline width="720" height="1280"></video><button class="hit" aria-label="Play: 3 details that make a UI animation feel premium"></button><span class="pp" aria-hidden="true"></span></div>
+      <div class="ov"><div class="k">SaaS · UI motion · <span class="mono">0:33</span></div><h3>3 details that make a UI animation feel premium</h3><button class="chip sbo"><svg class="ico" viewBox="0 0 24 24"><rect x="3" y="4" width="7" height="7" rx="1.5"/><rect x="14" y="4" width="7" height="7" rx="1.5"/><rect x="3" y="14" width="7" height="7" rx="1.5"/><rect x="14" y="14" width="7" height="7" rx="1.5"/></svg>Storyboard</button></div>
     </article>
     <article class="vc" data-sb="first3" data-yt="9R48O_YQjhA">
-      <div class="im"><video poster="/assets/img/poster-first-3-seconds.webp" preload="none" playsinline width="720" height="1280"></video><button class="hit" aria-label="Play: Your first 3 seconds decide everything"></button><span class="pp" aria-hidden="true"></span></div>
-      <div class="ov"><div class="k">EXPLAINER · 0:25</div><h4>Your first 3 seconds decide everything</h4><button class="chip sbo"><svg class="ico" viewBox="0 0 24 24" style="color:var(--ac)"><rect x="3" y="4" width="7" height="7" rx="1.5"/><rect x="14" y="4" width="7" height="7" rx="1.5"/><rect x="3" y="14" width="7" height="7" rx="1.5"/><rect x="14" y="14" width="7" height="7" rx="1.5"/></svg>Storyboard</button></div>
+      <div class="im fm"><video poster="/assets/img/poster-first-3-seconds.webp" preload="none" playsinline width="720" height="1280"></video><button class="hit" aria-label="Play: Your first 3 seconds decide everything"></button><span class="pp" aria-hidden="true"></span></div>
+      <div class="ov"><div class="k">Explainer · <span class="mono">0:25</span></div><h3>Your first 3 seconds decide everything</h3><button class="chip sbo"><svg class="ico" viewBox="0 0 24 24"><rect x="3" y="4" width="7" height="7" rx="1.5"/><rect x="14" y="4" width="7" height="7" rx="1.5"/><rect x="3" y="14" width="7" height="7" rx="1.5"/><rect x="14" y="14" width="7" height="7" rx="1.5"/></svg>Storyboard</button></div>
     </article>
     <article class="vc" data-sb="why">
-      <div class="im"><video src="/assets/video/why-viewers-leave.mp4" poster="/assets/img/poster-why-viewers-leave.webp" preload="none" playsinline width="720" height="1280"></video><button class="hit" aria-label="Play: Why viewers leave at second 3"></button><span class="pp" aria-hidden="true"></span></div>
-      <div class="ov"><div class="k">MOTION · 0:16</div><h4>Why viewers leave at second 3</h4><button class="chip sbo"><svg class="ico" viewBox="0 0 24 24" style="color:var(--ac)"><rect x="3" y="4" width="7" height="7" rx="1.5"/><rect x="14" y="4" width="7" height="7" rx="1.5"/><rect x="3" y="14" width="7" height="7" rx="1.5"/><rect x="14" y="14" width="7" height="7" rx="1.5"/></svg>Storyboard</button></div>
+      <div class="im fm"><video src="/assets/video/why-viewers-leave.mp4" poster="/assets/img/poster-why-viewers-leave.webp" preload="none" playsinline width="720" height="1280"></video><button class="hit" aria-label="Play: Why viewers leave at second 3"></button><span class="pp" aria-hidden="true"></span></div>
+      <div class="ov"><div class="k">Motion · <span class="mono">0:16</span></div><h3>Why viewers leave at second 3</h3><button class="chip sbo"><svg class="ico" viewBox="0 0 24 24"><rect x="3" y="4" width="7" height="7" rx="1.5"/><rect x="14" y="4" width="7" height="7" rx="1.5"/><rect x="3" y="14" width="7" height="7" rx="1.5"/><rect x="14" y="14" width="7" height="7" rx="1.5"/></svg>Storyboard</button></div>
     </article>
     <article class="vc" data-sb="anatomy">
-      <div class="im"><video src="/assets/video/anatomy.mp4" poster="/assets/img/poster-anatomy.webp" preload="none" playsinline width="720" height="1280"></video><button class="hit" aria-label="Play: Anatomy of a viral explainer"></button><span class="pp" aria-hidden="true"></span></div>
-      <div class="ov"><div class="k">BREAKDOWN · 0:28</div><h4>Anatomy of a viral explainer</h4><button class="chip sbo"><svg class="ico" viewBox="0 0 24 24" style="color:var(--ac)"><rect x="3" y="4" width="7" height="7" rx="1.5"/><rect x="14" y="4" width="7" height="7" rx="1.5"/><rect x="3" y="14" width="7" height="7" rx="1.5"/><rect x="14" y="14" width="7" height="7" rx="1.5"/></svg>Storyboard</button></div>
+      <div class="im fm"><video src="/assets/video/anatomy.mp4" poster="/assets/img/poster-anatomy.webp" preload="none" playsinline width="720" height="1280"></video><button class="hit" aria-label="Play: Anatomy of a viral explainer"></button><span class="pp" aria-hidden="true"></span></div>
+      <div class="ov"><div class="k">Breakdown · <span class="mono">0:28</span></div><h3>Anatomy of a viral explainer</h3><button class="chip sbo"><svg class="ico" viewBox="0 0 24 24"><rect x="3" y="4" width="7" height="7" rx="1.5"/><rect x="14" y="4" width="7" height="7" rx="1.5"/><rect x="3" y="14" width="7" height="7" rx="1.5"/><rect x="14" y="14" width="7" height="7" rx="1.5"/></svg>Storyboard</button></div>
     </article>
   </div>
   <div class="dots" id="dots" aria-hidden="true"><i class="on"></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
@@ -229,12 +224,12 @@
 
 <!-- ABOUT -->
 <section class="wrap ab" id="about" aria-labelledby="ab-t">
-  <div class="shead rv"><div class="pill"><span class="d"></span>About</div><span class="idx"><b>03</b> / 04</span></div>
+  <div class="shead"><span class="sname">About</span><span class="idx"><b>03</b> / 04</span></div>
   <div class="abg">
-    <div class="photo rv"><img src="/assets/img/about-720.webp" width="720" height="720" alt="Portrait of GamitoFX" loading="lazy"><div class="av"><span><span class="d live"></span>AVAILABLE</span><em>Based in Brazil · works in English</em></div></div>
-    <div class="rv">
-      <div class="iam">I AM</div>
-      <h2 class="big" id="ab-t">Gamito<i>FX</i></h2>
+    <div class="photo"><img src="/assets/img/about-720.webp" width="720" height="720" alt="Portrait of GamitoFX" loading="lazy"><div class="av"><span>Available</span><em>Based in Brazil · works in English</em></div></div>
+    <div>
+      <div class="iam">I am</div>
+      <h2 class="big rv" id="ab-t">Gamito<i>FX</i></h2>
       <p class="bio">Video editor and content strategist. <b>I plan the edit before I cut:</b> where the hook is, where people leave, what they should remember. Then I build it, with motion that explains.</p>
       <div class="stats">
         <div class="card st"><div class="i"><svg class="ico" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></div><b>3 years</b><span>editing for brands and creators</span></div>
@@ -247,14 +242,14 @@
 
 <!-- CLIENTS -->
 <section class="wrap pf" id="clients" aria-labelledby="cl-t">
-  <div class="shead rv"><div class="pill"><span class="d"></span>Clients</div><span class="idx"><b>04</b> / 04</span></div>
-  <h2 class="rv" id="cl-t"><span class="g">Brands and creators</span> I've edited for</h2>
-  <div class="card total rv"><b>590K+</b><p>combined followers across the brands and creators I've edited for</p></div>
-  <ul class="grid rv" style="list-style:none">
+  <div class="shead"><span class="sname">Clients</span><span class="idx"><b>04</b> / 04</span></div>
+  <h2 class="rv" id="cl-t">Brands and creators I’ve edited for</h2>
+  <div class="card total"><b id="total" data-to="590">590K+</b><p>combined followers across the brands and creators I’ve edited for</p></div>
+  <ul class="grid" style="list-style:none">
     <li class="card cr"><div class="a"><img src="/assets/img/clients/diogo.webp" width="160" height="160" alt="" loading="lazy"></div><b>Diogo Cabral</b><div class="n">317K</div><div class="y">Neuropsychology</div></li>
     <li class="card cr"><div class="a"><img src="/assets/img/clients/store.webp" width="160" height="160" alt="" loading="lazy"></div><b>Store Country</b><div class="n">131K</div><div class="y">Western wear</div></li>
     <li class="card cr"><div class="a"><img src="/assets/img/clients/cavalaria.webp" width="160" height="160" alt="" loading="lazy"></div><b>Cavalaria</b><div class="n">64.2K</div><div class="y">Equestrian</div></li>
-    <li class="card cr"><div class="a"><img src="/assets/img/clients/ellas.webp" width="160" height="160" alt="" loading="lazy"></div><b>Ella's</b><div class="n">51.1K</div><div class="y">Fashion</div></li>
+    <li class="card cr"><div class="a"><img src="/assets/img/clients/ellas.webp" width="160" height="160" alt="" loading="lazy"></div><b>Ella’s</b><div class="n">51.1K</div><div class="y">Fashion</div></li>
     <li class="card cr"><div class="a"><img src="/assets/img/clients/tais.webp" width="160" height="160" alt="" loading="lazy"></div><b>Taís Canatto</b><div class="n">17.3K</div><div class="y">Creator</div></li>
     <li class="card cr"><div class="a"><img src="/assets/img/clients/wellington.webp" width="160" height="160" alt="" loading="lazy"></div><b>Dr. Wellington</b><div class="n">14.3K</div><div class="y">Health</div></li>
   </ul>
@@ -263,17 +258,17 @@
 <!-- CONTACT -->
 <section class="wrap ct" id="contact" aria-labelledby="ct-t">
   <div class="ctg">
-    <div class="rv">
-      <div class="pill"><span class="d"></span>Contact</div>
-      <h2 id="ct-t"><span class="g">Let's edit your</span> next upload</h2>
+    <div>
+      <div class="shead"><span class="sname">Contact</span></div>
+      <h2 class="rv" id="ct-t">Let’s edit your next upload</h2>
       <p class="sub">Send your channel or product and what you want the next video to do.</p>
-      <div class="resp"><span class="d live"></span>Usually replies within a day</div>
+      <p class="resp">Usually replies within a day</p>
       <a class="card cc main" href="https://ig.me/m/gamitofx" target="_blank" rel="noopener"><div class="ic"><svg class="ico" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r=".6" fill="currentColor"/></svg></div><div class="tx"><div class="lbl">Instagram · fastest</div><b>DM “EDIT” to @gamitofx</b></div><span class="go">Open ↗</span></a>
       <a class="card cc" href="https://x.com/gamitofx" target="_blank" rel="noopener"><div class="ic"><svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><path d="M17.5 3h3.2l-7 8 8.2 10h-6.4l-5-6.3L4.7 21H1.5l7.5-8.6L1.2 3h6.6l4.5 5.8z"/></svg></div><div class="tx"><div class="lbl">X / Twitter</div><b>@gamitofx</b></div><span class="go" aria-hidden="true">↗</span></a>
       <div class="card cc"><div class="ic"><svg class="ico" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="3"/><path d="M4 7l8 6 8-6"/></svg></div><div class="tx"><div class="lbl">E-mail</div><b class="em"><a href="mailto:joaogamitomkt@gmail.com">joaogamitomkt@gmail.com</a></b></div><button class="go" id="copy" data-copy="joaogamitomkt@gmail.com">Copy</button></div>
     </div>
-    <form class="card form rv" id="brief" novalidate>
-      <div class="fh"><div class="lbl">Project brief</div><span class="lbl">2 min</span></div>
+    <form class="card form" id="brief" novalidate>
+      <div class="fh"><div class="ft">Project brief</div><span class="lbl"><span class="mono">2</span> min</span></div>
       <fieldset class="fl"><legend>What do you need?</legend>
         <div class="opts">
           <input type="radio" name="need" id="n1" value="Long-form" checked><label for="n1">Long-form</label>
@@ -284,7 +279,7 @@
       <label class="fl"><span>E-mail *</span><input class="in" type="email" name="email" required autocomplete="email" placeholder="you@example.com"></label>
       <label class="fl"><span>Channel or product link *</span><input class="in" type="text" name="link" required inputmode="url" autocapitalize="off" placeholder="youtube.com/@yourchannel"></label>
       <label class="fl"><span>What should the next video do?</span><textarea class="in" name="goal" maxlength="2000" placeholder="More watch time, a launch, a new series…"></textarea></label>
-      <button class="btn pri" type="submit" style="margin-top:16px">Send brief ↗</button>
+      <button class="btn pri" type="submit">Send brief ↗</button>
       <p class="fine">No calls needed. Everything happens in writing.</p>
     </form>
   </div>
@@ -297,9 +292,9 @@
     <div class="ftop">
       <div>
         <a class="brand" href="#top"><img class="logo" src="/assets/img/gamitofx-96.webp" width="36" height="36" alt=""><span class="wm">Gamito<i>FX</i></span></a>
-        <div class="fstat"><span class="d live"></span>Available for new projects</div>
+        <div class="fstat"><span class="d"></span>Available for new projects</div>
         <p class="ds">Editing and content strategy for educational creators, SaaS and apps. Long-form and Shorts.</p>
-        <a class="chip" href="#contact" style="height:42px;padding:0 18px;font-size:14px;font-weight:600;border-color:rgba(31,199,178,.45)">Start a project →</a>
+        <a class="btn ghost" href="#contact">Start a project →</a>
       </div>
       <div class="cols">
         <div><div class="lbl">Menu</div><a href="#long">Long-form</a><a href="#short">Short-form</a><a href="#about">About</a><a href="#contact">Contact</a></div>
@@ -307,16 +302,16 @@
       </div>
     </div>
     <div class="gwrap" aria-hidden="true"><div class="giant" id="giant">Gamito<i>FX</i></div></div>
-    <div class="copy"><span>© 2026 GamitoFX. All rights reserved.</span><a class="top" href="#top" aria-label="Back to top">↑</a></div>
+    <div class="copy"><span>© 2026 GamitoFX</span><a class="top" href="#top" aria-label="Back to top">↑</a></div>
   </div>
 </footer>
 
 <dialog class="sheet" id="sheet" aria-labelledby="sh-t">
   <div class="grab" aria-hidden="true"></div>
   <div class="shtop"><div><div class="lbl" id="sh-l"></div><h3 id="sh-t"></h3></div><button class="x" id="sh-x" aria-label="Close storyboard">✕</button></div>
-  <p class="sub" id="sh-d" style="font-size:13px;margin:10px 0 14px"></p>
+  <p class="sub" id="sh-d"></p>
   <div class="vstrip" id="sh-f" tabindex="0" aria-label="Storyboard frames"></div>
-  <button class="btn sec" id="sh-w" style="margin-top:16px;height:46px">▶ Watch the short</button>
+  <button class="btn sec" id="sh-w">▶ Watch the short</button>
 </dialog>
 
 <div class="toast" id="toast" role="status" aria-live="polite"></div>
@@ -355,6 +350,6 @@
     ["anat-14","0:14","One example","One real example outweighs three claims."]]}
 }
 </script>
-<script src="/assets/site.js?v=20261112a" defer></script>
+<script src="/assets/site.js?v=20261112b" defer></script>
 </body>
 </html>

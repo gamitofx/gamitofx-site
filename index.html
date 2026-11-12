@@ -34,7 +34,7 @@
 <!-- Fonts -->
 <link rel="preload" href="/assets/fonts/sora-var.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="/assets/fonts/inter-var.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="/assets/site.css?v=20261112b">
+<link rel="stylesheet" href="/assets/site.css?v=20261112c">
 
 <!-- Google Analytics (GA4): paste the tag here when the property is created -->
 <!-- Microsoft Clarity: paste the install code here when the project is created -->
@@ -146,7 +146,7 @@
         <span class="dur">15:04</span>
         <div class="bar" aria-hidden="true" hidden><u style="left:9%"></u><u style="left:28%"></u><u style="left:45%"></u><u style="left:62%"></u><u style="left:94%"></u></div>
       </div>
-      <div class="seg" role="tablist" aria-label="Video or storyboard" style="display:none">
+      <div class="seg" role="tablist" aria-label="Video or storyboard">
         <button role="tab" id="tab-v" aria-selected="true" aria-controls="pv"><svg class="ico" viewBox="0 0 24 24"><path d="M7 4l13 8-13 8z"/></svg>Video</button>
         <button role="tab" id="tab-s" aria-selected="false" aria-controls="ps" tabindex="-1"><svg class="ico" viewBox="0 0 24 24"><rect x="3" y="4" width="7" height="7" rx="1.5"/><rect x="14" y="4" width="7" height="7" rx="1.5"/><rect x="3" y="14" width="7" height="7" rx="1.5"/><rect x="14" y="14" width="7" height="7" rx="1.5"/></svg>Storyboard</button>
       </div>
@@ -157,28 +157,18 @@
         <div class="rowb"><button class="chip" id="lf-full">⤢ Full screen</button><a class="chip" id="lf-yt" href="#long" target="_blank" rel="noopener">Watch on YouTube ↗</a></div>
       </div>
       <div class="sb" id="ps" role="tabpanel" aria-labelledby="tab-s" hidden>
-        <div class="sbh"><span class="lbl"><b>01</b> · The brief</span></div>
-        <p class="brief">17 minutes of one camera, already cut and captioned. <span class="mut">Goal: keep the calm tone and give the viewer a structure to follow.</span></p>
-        <div class="sbh"><span class="lbl"><b>02</b> · The look</span><span class="lbl">from the creator’s brand</span></div>
-        <div class="look"><div class="sw" style="background:#F4ECDF" title="Paper cream"></div><div class="sw" style="background:#7B1E22" title="Deep red"></div><div class="sw" style="background:#3B2A25" title="Ink brown"></div><div class="sw" style="background:#fff" title="White"></div><div class="fonts">Paper, washi tape, polaroids<br>Poppins · Allura · Playfair</div></div>
-        <div class="sbh"><span class="lbl"><b>03</b> · Storyboard</span><span class="lbl">swipe →</span></div>
-        <div class="tl"><div class="strip" tabindex="0" aria-label="Storyboard frames">
-          <div class="fr"><div class="im fm"><img src="/assets/img/sb/krishi-5.webp" width="480" height="270" alt="" loading="lazy"><span class="tc">0:05</span></div><b>Hook: two people</b><p>Same age, same city. Two characters make the contrast visible from the first second.</p></div>
-          <div class="fr"><div class="im fm"><img src="/assets/img/sb/krishi-20.webp" width="480" height="270" alt="" loading="lazy"><span class="tc">0:20</span></div><b>The checklist</b><p>One item ticks per sentence, on the spoken word.</p></div>
-          <div class="fr"><div class="im fm"><img src="/assets/img/sb/krishi-75.webp" width="480" height="270" alt="" loading="lazy"><span class="tc">1:15</span></div><b>The reveal</b><p>The keyword lands on the beat of the line.</p></div>
-          <div class="fr"><div class="im fm"><img src="/assets/img/sb/krishi-340.webp" width="480" height="270" alt="" loading="lazy"><span class="tc">5:40</span></div><b>Study card</b><p>Research shows up as a note card, with numbers only when they’re said.</p></div>
-          <div class="fr"><div class="im fm"><img src="/assets/img/sb/krishi-960.webp" width="480" height="270" alt="" loading="lazy"><span class="tc">16:00</span></div><b>The close</b><p>Short, bold words carry the call to action.</p></div>
-        </div></div>
-        <div class="sbh"><span class="lbl"><b>04</b> · The process</span></div>
-        <div class="flow"><span class="chip">Transcript</span><em>→</em><span class="chip">Structure</span><em>→</em><span class="chip">Look</span><em>→</em><span class="chip">Storyboard</span><em>→</em><span class="chip">Cuts</span><em>→</em><span class="chip">Motion</span><em>→</em><span class="chip">Sound</span><em>→</em><span class="chip">Review</span></div>
-        <div class="sbh"><span class="lbl"><b>05</b> · By the numbers</span></div>
-        <div class="nums"><div class="num"><b>5</b><span>chapter cards so viewers know where they are</span></div><div class="num"><b>~80</b><span>motion moments timed to the voice</span></div><div class="num"><b>7</b><span>music cues, one per section</span></div><div class="num"><b>−14</b><span>LUFS, YouTube’s loudness target</span></div></div>
+        <p class="sbx" id="sb-x">How the edit was planned, frame by frame: what happens on screen and why it works.</p>
+        <button type="button" class="sbprev fm" id="sb-open" aria-label="Open the full storyboard">
+          <img id="sb-img" src="/assets/img/storyboards/alexl.webp" width="1400" height="4443" alt="Storyboard sheet for MicroAudiences, spec concept" loading="lazy" decoding="async">
+          <span class="sbfade" aria-hidden="true"></span>
+        </button>
+        <button type="button" class="btn sec" id="sb-full"><svg class="ico" viewBox="0 0 24 24"><rect x="3" y="4" width="7" height="7" rx="1.5"/><rect x="14" y="4" width="7" height="7" rx="1.5"/><rect x="3" y="14" width="7" height="7" rx="1.5"/><rect x="14" y="14" width="7" height="7" rx="1.5"/></svg>Open the full storyboard</button>
       </div>
     </article>
     <div>
       <div class="upn"><span class="lbl">Up next</span><span class="cnt"><span class="mono">2</span> videos</span></div>
-      <button type="button" class="card item on" data-i="0" data-yt="0jx_jV0DFq4" data-poster="/assets/img/poster-microaudiences.webp" data-alt="Frame from the edit: hand-drawn diagram over the speaker" data-title="MicroAudiences · SPEC concept" data-dur="15:04" data-tag="Spec edit" data-meta="Paid ads|Spec edit · Alex Becker|Hand-drawn diagrams" data-sb="0" aria-pressed="true"><div class="t"><img src="/assets/img/sb/microaudiences-640.webp" width="480" height="270" alt="" loading="lazy"><span class="n">01</span></div><div><div class="k">Now playing</div><h3>MicroAudiences · SPEC concept</h3><div class="m">Paid ads · <span class="mono">15:04</span></div></div></button>
-      <button type="button" class="card item" data-i="1" data-yt="2nMF9-UXEYw" data-poster="/assets/img/krishi-poster.webp" data-alt="Frame from the edit: a polaroid checklist next to the speaker" data-title="The Psychological Productivity Hacks That Actually Rewire Your Brain" data-dur="16:31" data-tag="Spec edit" data-meta="Psychology|Spec edit · Krishi Ahuja|5 chapters" data-sb="1" aria-pressed="false"><div class="t"><img src="/assets/img/sb/krishi-640.webp" width="480" height="270" alt="" loading="lazy"><span class="n">02</span></div><div><div class="k">Spec edit</div><h3>The Psychological Productivity Hacks…</h3><div class="m">Psychology · <span class="mono">16:31</span></div></div></button>
+      <button type="button" class="card item on" data-i="0" data-yt="0jx_jV0DFq4" data-poster="/assets/img/poster-microaudiences.webp" data-alt="Frame from the edit: hand-drawn diagram over the speaker" data-title="MicroAudiences · SPEC concept" data-dur="15:04" data-tag="Spec edit" data-meta="Paid ads|Spec edit · Alex Becker|Hand-drawn diagrams" data-sb="alexl" data-ch="0" aria-pressed="true"><div class="t"><img src="/assets/img/sb/microaudiences-640.webp" width="480" height="270" alt="" loading="lazy"><span class="n">01</span></div><div><div class="k">Now playing</div><h3>MicroAudiences · SPEC concept</h3><div class="m">Paid ads · <span class="mono">15:04</span></div></div></button>
+      <button type="button" class="card item" data-i="1" data-yt="2nMF9-UXEYw" data-poster="/assets/img/krishi-poster.webp" data-alt="Frame from the edit: a polaroid checklist next to the speaker" data-title="The Psychological Productivity Hacks That Actually Rewire Your Brain" data-dur="16:31" data-tag="Spec edit" data-meta="Psychology|Spec edit · Krishi Ahuja|5 chapters" data-sb="krishi" data-ch="1" aria-pressed="false"><div class="t"><img src="/assets/img/sb/krishi-640.webp" width="480" height="270" alt="" loading="lazy"><span class="n">02</span></div><div><div class="k">Spec edit</div><h3>The Psychological Productivity Hacks…</h3><div class="m">Psychology · <span class="mono">16:31</span></div></div></button>
       <a class="nextline" href="#contact">Your next long-form? <span>Send me the raw footage →</span></a>
     </div>
   </div>
@@ -190,9 +180,9 @@
   <h2 class="rv" id="sf-t">Built for the first 3 seconds</h2>
   <div class="arrows"><button id="prev" aria-label="Previous video">←</button><button id="next" aria-label="Next video">→</button></div>
   <div class="car" id="car">
-    <article class="vc" data-yt="mcOcZiGw96A">
+    <article class="vc" data-sb="alexs" data-yt="mcOcZiGw96A">
       <div class="im fm"><video poster="/assets/img/poster-microaudiences-short.webp" preload="none" playsinline width="720" height="1280"></video><button class="hit" aria-label="Play: MicroAudiences, spec teaser"></button><span class="pp" aria-hidden="true"></span></div>
-      <div class="ov"><div class="k">Spec · teaser</div><h3>MicroAudiences · spec teaser</h3></div>
+      <div class="ov"><div class="k">Spec · teaser</div><h3>MicroAudiences · spec teaser</h3><button class="chip sbo"><svg class="ico" viewBox="0 0 24 24"><rect x="3" y="4" width="7" height="7" rx="1.5"/><rect x="14" y="4" width="7" height="7" rx="1.5"/><rect x="3" y="14" width="7" height="7" rx="1.5"/><rect x="14" y="14" width="7" height="7" rx="1.5"/></svg>Storyboard</button></div>
     </article>
     <article class="vc" data-sb="sorg" data-yt="knkTJ7WWLGc">
       <div class="im fm"><video poster="/assets/img/poster-chris-sorg.webp" preload="none" playsinline width="720" height="1280"></video><button class="hit" aria-label="Play: Why every founder brand looks the same"></button><span class="pp" aria-hidden="true"></span></div>
@@ -307,49 +297,31 @@
 </footer>
 
 <dialog class="sheet" id="sheet" aria-labelledby="sh-t">
-  <div class="grab" aria-hidden="true"></div>
-  <div class="shtop"><div><div class="lbl" id="sh-l"></div><h3 id="sh-t"></h3></div><button class="x" id="sh-x" aria-label="Close storyboard">✕</button></div>
-  <p class="sub" id="sh-d"></p>
-  <div class="vstrip" id="sh-f" tabindex="0" aria-label="Storyboard frames"></div>
-  <button class="btn sec" id="sh-w">▶ Watch the short</button>
+  <div class="shbar">
+    <div class="grab" aria-hidden="true"></div>
+    <div class="shtop"><div><div class="lbl" id="sh-l"></div><h3 id="sh-t"></h3></div>
+      <div class="shact"><button class="x zm" id="sh-z" aria-label="Zoom in" aria-pressed="false"><svg class="ico" viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="M20 20l-4-4M11 8v6M8 11h6"/></svg></button><button class="x" id="sh-x" aria-label="Close storyboard">✕</button></div>
+    </div>
+  </div>
+  <div class="shbody" id="sh-b" tabindex="0"><img id="sh-img" alt="" decoding="async"></div>
+  <div class="shfoot"><button class="btn pri" id="sh-w">▶ Watch the video</button></div>
 </dialog>
 
 <div class="toast" id="toast" role="status" aria-live="polite"></div>
 
 <script type="application/json" id="sb-data">
 {
-  "sorg": {"t":"Why every founder brand looks the same","d":"0:37","x":"Spec edit, not a client project. His own Shorts format is kept so it still feels like him; Merkion's colors and product UI carry the message.","f":[
-    ["sorg-2.6","0:02","The hook","“90%” lands on the first word, above his usual video window."],
-    ["sorg-16","0:16","The pause","A full-screen type beat on paper: one question, one color."],
-    ["sorg-21","0:21","25 people","The feed becomes 25 avatars, then the differences fade out."],
-    ["sorg-29.4","0:29","The problem","The window changes dress and the Brand Fit score drops to 23."]]},
-  "same": {"t":"Same script. Two edits.","d":"0:33","x":"The same words, edited twice. The difference is three decisions, not effects.","f":[
-    ["same-0.5","0:00","The script","Shown first, so it's clear the words never change."],
-    ["same-8","0:08","Edit A","A typical edit: title card and a caption at the bottom."],
-    ["same-15","0:15","Edit B","Opens on the payoff. One keyword per line."],
-    ["same-22","0:22","The why","Each decision is named on screen."]]},
-  "ui": {"t":"3 details that make a UI animation feel premium","d":"0:33","x":"Same app, same screens, edited twice: CHEAP and PREMIUM side by side, so the difference is easy to see.","f":[
-    ["ui-3.4","0:03","The hook","Two identical phones run the same flow. Only one feels expensive."],
-    ["ui-10.9","0:10","Easing","Linear motion next to a spring, with the curve drawn under each phone."],
-    ["ui-17.6","0:17","Stagger","Eight elements arrive one by one, shown in slow motion first."],
-    ["ui-24.5","0:24","The tiny stuff","Overshoot, motion blur and a sound that lands with the card."]]},
-  "first3": {"t":"Your first 3 seconds decide everything","d":"0:25","x":"A faceless explainer: a timer, a timeline and one fix you can use today.","f":[
-    ["first3-1","0:01","The hook","A running timer makes “second 3” concrete."],
-    ["first3-7","0:07","The problem","Logo, slow title, context: the usual intro on a real timeline."],
-    ["first3-13","0:13","The fix","The payoff moves to the front, underlined by hand."],
-    ["first3-21","0:21","Before / after","Same content, two first lines side by side."]]},
-  "why": {"t":"Why viewers leave at second 3","d":"0:16","x":"No voice, just motion and sound. The video does what it explains.","f":[
-    ["why-0.5","0:00","Two doors","The intro corridor on one side, the payoff on the other."],
-    ["why-3.1","0:03","Gone","The viewer is pulled out at second 3, like a swipe."],
-    ["why-6","0:06","The payoff","The best part was at 0:47. Nobody got there."],
-    ["why-10","0:10","Same viewer","Payoff moved to 0:00. Now they walk past second 3."]]},
-  "anatomy": {"t":"Anatomy of a viral explainer","d":"0:28","x":"A chapter bar is born in the hook and stays on screen: the Reel uses the technique it teaches.","f":[
-    ["anat-1.5","0:01","Three videos","Three different explainers share one structure."],
-    ["anat-5","0:05","Hook","The result jumps ahead of the intro on the timeline."],
-    ["anat-9","0:09","Problem","Jargon is swapped for the viewer's own words."],
-    ["anat-14","0:14","One example","One real example outweighs three claims."]]}
+  "alexl":   {"t":"MicroAudiences · spec concept","d":"15:04","h":4443,"kind":"long"},
+  "krishi":  {"t":"The Psychological Productivity Hacks That Actually Rewire Your Brain","d":"16:31","h":4548,"kind":"long"},
+  "alexs":   {"t":"MicroAudiences · spec teaser","d":"1:00","h":4773},
+  "sorg":    {"t":"Why every founder brand looks the same","d":"0:37","h":4624},
+  "same":    {"t":"Same script. Two edits.","d":"0:33","h":4039},
+  "ui":      {"t":"3 details that make a UI animation feel premium","d":"0:33","h":4577},
+  "first3":  {"t":"Your first 3 seconds decide everything","d":"0:25","h":3574},
+  "why":     {"t":"Why viewers leave at second 3","d":"0:16","h":3773},
+  "anatomy": {"t":"Anatomy of a viral explainer","d":"0:28","h":3521}
 }
 </script>
-<script src="/assets/site.js?v=20261112b" defer></script>
+<script src="/assets/site.js?v=20261112c" defer></script>
 </body>
 </html>

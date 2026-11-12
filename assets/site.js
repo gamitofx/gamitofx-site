@@ -5,6 +5,9 @@
   const body = document.body;
   const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
 
+  let _sb;
+  const sbData = () => _sb || (_sb = JSON.parse($('#sb-data').textContent));
+
   /* toast */
   const toastEl = $('#toast');
   let tt;
@@ -84,6 +87,19 @@
   $('#lf-full').addEventListener('click', () => { const f = startYT(); if (f && f.requestFullscreen) f.requestFullscreen().catch(() => {}); });
   ytLink.addEventListener('click', e => { if (!yt) { e.preventDefault(); toast('The full video is coming to YouTube soon.'); } });
 
+  let longSheet = 'alexl';
+  const sbImg = $('#sb-img');
+  const setLongSheet = (key) => {
+    longSheet = key;
+    const s = sbData()[key]; if (!s) return;
+    sbImg.src = `/assets/img/storyboards/${key}.webp`;
+    sbImg.height = s.h;
+    sbImg.alt = `Storyboard sheet for ${s.t}`;
+  };
+  const openLong = () => openViewer(longSheet, () => { select(0); $('#long').scrollIntoView({ behavior: reduce ? 'auto' : 'smooth' }); setTimeout(startYT, reduce ? 0 : 400); });
+  $('#sb-open').addEventListener('click', openLong);
+  $('#sb-full').addEventListener('click', openLong);
+
   const items = $$('.lfg .item[data-yt]');
   const pick = (it) => {
     items.forEach(x => {
@@ -108,9 +124,8 @@
     play.setAttribute('aria-label', `Play: ${ytTitle}`);
     $('h3', $('#pv')).textContent = ytTitle;
     $('.meta', $('#pv')).innerHTML = it.dataset.meta.split('|').map(m => `<span>${m}</span>`).join('');
-    const hasSb = it.dataset.sb === '1';
-    $('.bar', thumb).hidden = !hasSb;
-    $('.seg').style.display = hasSb ? '' : 'none';
+    $('.bar', thumb).hidden = it.dataset.ch !== '1';
+    setLongSheet(it.dataset.sb);
     select(0);
     setLink();
   };
@@ -166,31 +181,51 @@
     cards.forEach(c => vo.observe(c));
   }
 
-  /* storyboard sheet */
-  const data = JSON.parse($('#sb-data').textContent);
-  const sheet = $('#sheet');
-  let openCard = null;
-  const openSheet = (card) => {
-    const s = data[card.dataset.sb]; if (!s) return;
-    openCard = card;
+  /* storyboard viewer: the full sheet, with zoom for small screens */
+  const sheet = $('#sheet'), shImg = $('#sh-img'), shBody = $('#sh-b'), shZoom = $('#sh-z');
+  let onWatch = null, lastFocus = null;
+  const setZoom = (on) => {
+    sheet.classList.toggle('zoom', on);
+    shZoom.setAttribute('aria-pressed', on);
+    shZoom.setAttribute('aria-label', on ? 'Zoom out' : 'Zoom in');
+  };
+  function openViewer(key, watch) {
+    const s = sbData()[key]; if (!s) return;
+    onWatch = watch; lastFocus = document.activeElement;
     $('#sh-l').innerHTML = `Storyboard · <span class="mono">${s.d}</span>`;
     $('#sh-t').textContent = s.t;
-    $('#sh-d').textContent = s.x;
-    $('#sh-f').innerHTML = s.f.map(([img, tc, b, p]) =>
-      `<div class="vf"><div class="im"><img src="/assets/img/sb/${img}.webp" width="240" height="427" alt=""><span class="tc">${tc}</span></div><p><b>${b}</b>${p}</p></div>`).join('');
+    $('#sh-w').textContent = s.kind === 'long' ? '▶ Watch the video' : '▶ Watch the short';
+    shImg.width = 1400; shImg.height = s.h;
+    shImg.alt = `Storyboard sheet for ${s.t}: each frame with what happens on screen and why it works`;
+    shImg.classList.remove('ld');
+    shImg.onload = () => shImg.classList.add('ld');
+    shImg.src = `/assets/img/storyboards/${key}.webp`;
+    if (shImg.complete) shImg.classList.add('ld');
+    setZoom(false);
+    shBody.scrollTop = 0; shBody.scrollLeft = 0;
     stopAll(null);
     if (sheet.showModal) sheet.showModal(); else sheet.setAttribute('open', '');
-  };
+    body.classList.add('sheet-open');
+  }
   const closeSheet = () => { if (sheet.close) sheet.close(); else sheet.removeAttribute('open'); };
-  $$('.sbo').forEach(b => b.addEventListener('click', e => { e.stopPropagation(); openSheet(b.closest('.vc')); }));
+  sheet.addEventListener('close', () => { body.classList.remove('sheet-open'); if (lastFocus) lastFocus.focus({ preventScroll: true }); });
+  shZoom.addEventListener('click', () => {
+    const on = !sheet.classList.contains('zoom');
+    const r = shBody.scrollTop / Math.max(1, shBody.scrollHeight);
+    setZoom(on);
+    shBody.scrollTop = r * shBody.scrollHeight;
+  });
+  $$('.sbo').forEach(b => b.addEventListener('click', e => {
+    e.stopPropagation();
+    const c = b.closest('.vc');
+    openViewer(c.dataset.sb, () => {
+      c.scrollIntoView({ behavior: reduce ? 'auto' : 'smooth', block: 'center', inline: 'start' });
+      setTimeout(() => $('.hit', c).click(), reduce ? 0 : 450);
+    });
+  }));
   $('#sh-x').addEventListener('click', closeSheet);
   sheet.addEventListener('click', e => { if (e.target === sheet) closeSheet(); });
-  $('#sh-w').addEventListener('click', () => {
-    closeSheet();
-    if (!openCard) return;
-    openCard.scrollIntoView({ behavior: reduce ? 'auto' : 'smooth', block: 'center', inline: 'start' });
-    const c = openCard; setTimeout(() => $('.hit', c).click(), reduce ? 0 : 450);
-  });
+  $('#sh-w').addEventListener('click', () => { const w = onWatch; closeSheet(); if (w) w(); });
 
   /* copy e-mail */
   $('#copy').addEventListener('click', async (e) => {

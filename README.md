@@ -1,8 +1,8 @@
 # gamitofx-site
 
-Site da Gamitofx (gamitofx.com). HTML, CSS e JS puros, sem build: qualquer hospedagem estática serve (hospedado no Cloudflare Pages; `_headers` define cache e segurança).
+Site da GamitoFX (gamitofx.com). HTML, CSS e JS puros, sem build: qualquer hospedagem estática serve (hospedado no Cloudflare Pages; `_headers` define cache e segurança).
 
-- `index.html`: página única (hero, método, trabalhos, serviços, pacotes, processo, checklist grátis, sobre, FAQ).
+- `index.html`: página única (primeira tela, vídeos longos com storyboard, curtos, sobre, clientes, contato).
 - `assets/`: CSS, JS, imagens (WebP), vídeos comprimidos (H.264, faststart) e o PDF do checklist.
 - SEO: `robots.txt`, `sitemap.xml`, `llms.txt`, JSON-LD no `<head>`, Open Graph com `assets/img/og-image.jpg`.
 - Ícones: `favicon.ico`, `icon-192.png`, `icon-512.png`, `apple-touch-icon.png`, `site.webmanifest`.

@@ -143,6 +143,7 @@ section{position:relative}
 .rowb .chip{height:34px;font-size:12.5px}
 .upn{display:flex;justify-content:space-between;align-items:center;margin:24px 0 12px}
 .cnt{font-family:var(--f-m);font-size:10.5px;padding:6px 10px;border-radius:99px;border:1px solid rgba(31,199,178,.4);color:var(--ac)}
+button.item{width:100%;text-align:left;color:inherit;font:inherit;cursor:pointer}
 .item{display:flex;gap:12px;padding:10px;border-radius:18px;margin-bottom:10px;align-items:center}
 .item.on{border-color:rgba(31,199,178,.42);background:linear-gradient(180deg,rgba(31,199,178,.09),rgba(12,17,19,.7))}
 .item .t{width:118px;flex:none;aspect-ratio:16/9;border-radius:11px;overflow:hidden;position:relative;background:#111}

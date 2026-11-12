@@ -50,16 +50,18 @@
     t.addEventListener('keydown', e => { if (e.key === 'ArrowRight' || e.key === 'ArrowLeft') { const n = (i + 1) % 2; select(n); tabs[n].focus(); } });
   });
 
-  /* long-form player: YouTube (unlisted) on demand */
-  const play = $('#lf-play'), thumb = $('#lf-thumb'), yt = play.dataset.yt;
-  if (yt) $('#lf-yt').href = `https://www.youtube.com/watch?v=${yt}`;
+  /* long-form player: YouTube (unlisted) on demand; the list switches the video */
+  const play = $('#lf-play'), thumb = $('#lf-thumb'), ytLink = $('#lf-yt');
+  let yt = play.dataset.yt, ytTitle = play.getAttribute('aria-label').replace(/^Play: /, '');
+  const setLink = () => { ytLink.href = yt ? `https://www.youtube.com/watch?v=${yt}` : '#long'; };
+  setLink();
   const startYT = () => {
     if (!yt) { toast('The full video is coming to YouTube soon.'); return null; }
     let f = $('iframe', thumb);
     if (!f) {
       f = document.createElement('iframe');
       f.src = `https://www.youtube-nocookie.com/embed/${yt}?autoplay=1&rel=0&modestbranding=1&playsinline=1`;
-      f.title = 'The Psychological Productivity Hacks That Actually Rewire Your Brain';
+      f.title = ytTitle;
       f.allow = 'autoplay; encrypted-media; picture-in-picture; fullscreen';
       f.allowFullscreen = true;
       thumb.appendChild(f);
@@ -68,7 +70,30 @@
   };
   play.addEventListener('click', startYT);
   $('#lf-full').addEventListener('click', () => { const f = startYT(); if (f && f.requestFullscreen) f.requestFullscreen().catch(() => {}); });
-  $('#lf-yt').addEventListener('click', e => { if (!yt) { e.preventDefault(); toast('The full video is coming to YouTube soon.'); } });
+  ytLink.addEventListener('click', e => { if (!yt) { e.preventDefault(); toast('The full video is coming to YouTube soon.'); } });
+
+  const items = $$('.lfg .item[data-yt]');
+  const pick = (it) => {
+    items.forEach(x => {
+      const on = x === it;
+      x.classList.toggle('on', on);
+      $('.k', x).textContent = on ? '▶ NOW PLAYING' : `0${+x.dataset.i + 1} · ${x.dataset.tag}`;
+    });
+    const old = $('iframe', thumb); if (old) old.remove();
+    yt = it.dataset.yt; ytTitle = it.dataset.title;
+    $('img', thumb).src = it.dataset.poster;
+    $('.tag', thumb).textContent = it.dataset.tag;
+    $('.dur', thumb).textContent = it.dataset.dur;
+    play.setAttribute('aria-label', `Play: ${ytTitle}`);
+    $('h3', $('#pv')).textContent = ytTitle;
+    $('.meta', $('#pv')).innerHTML = it.dataset.meta.split('|').map(m => `<span>${m}</span>`).join('');
+    const hasSb = it.dataset.sb === '1';
+    $('.bar', thumb).hidden = !hasSb;
+    $('.seg').style.display = hasSb ? '' : 'none';
+    select(0);
+    setLink();
+  };
+  items.forEach(it => it.addEventListener('click', () => pick(it)));
 
   /* shorts carousel */
   const car = $('#car'), cards = $$('.vc', car), dots = $$('#dots i');

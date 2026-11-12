@@ -15,3 +15,4 @@ Site da GamitoFX. Responda em português; o site é em inglês (público gringo)
 - Ao mudar ou criar página: atualizar `sitemap.xml` (lastmod) e revisar visualmente em desktop e celular (360 px inclusive) antes de entregar.
 - Checklist completo de lançamento: skill `/site-lancamento` do gamitofx-estudio.
 - GA4 e Clarity: os códigos entram no `<head>` de todas as páginas, nos comentários marcados.
+- **Cache:** `assets/` fica 7 dias no navegador (`_headers`). Toda mudança em `site.css` ou `site.js` exige trocar o `?v=` no `index.html` e no `404.html`, senão quem já visitou vê o visual antigo misturado com o HTML novo.

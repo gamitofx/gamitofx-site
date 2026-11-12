@@ -85,18 +85,38 @@
   $('#prev').addEventListener('click', () => car.scrollBy({ left: -step(), behavior: reduce ? 'auto' : 'smooth' }));
   $('#next').addEventListener('click', () => car.scrollBy({ left: step(), behavior: reduce ? 'auto' : 'smooth' }));
 
-  const stopAll = (except) => cards.forEach(c => { const v = $('video', c); if (c !== except && !v.paused) { v.pause(); c.classList.remove('playing'); } });
+  /* a short plays from YouTube (data-yt) or from its own mp4 */
+  const stopCard = (c) => {
+    const f = $('iframe', c), v = $('video', c);
+    if (f) f.remove();
+    if (v && !v.paused) v.pause();
+    c.classList.remove('playing');
+  };
+  const isOn = (c) => c.classList.contains('playing');
+  const stopAll = (except) => cards.forEach(c => { if (c !== except && isOn(c)) stopCard(c); });
+  const playCard = (c) => {
+    stopAll(c);
+    const id = c.dataset.yt;
+    if (id) {
+      const f = document.createElement('iframe');
+      f.src = `https://www.youtube-nocookie.com/embed/${id}?autoplay=1&rel=0&playsinline=1&loop=1&playlist=${id}`;
+      f.title = $('h4', c).textContent;
+      f.allow = 'autoplay; encrypted-media; picture-in-picture; fullscreen';
+      f.allowFullscreen = true;
+      $('.im', c).appendChild(f);
+    } else { const v = $('video', c); v.controls = false; v.play(); }
+    c.classList.add('playing');
+  };
   cards.forEach(c => {
+    const toggle = () => isOn(c) ? stopCard(c) : playCard(c);
+    $('.hit', c).addEventListener('click', toggle);
+    $('.pp', c).addEventListener('click', toggle);
     const v = $('video', c);
-    $('.hit', c).addEventListener('click', () => {
-      if (v.paused) { stopAll(c); v.controls = false; v.play(); c.classList.add('playing'); }
-      else { v.pause(); c.classList.remove('playing'); }
-    });
     v.addEventListener('ended', () => c.classList.remove('playing'));
   });
-  /* pause shorts that leave the screen */
+  /* stop shorts that leave the screen */
   if ('IntersectionObserver' in window) {
-    const vo = new IntersectionObserver(es => es.forEach(e => { if (!e.isIntersecting) { const v = $('video', e.target); if (!v.paused) { v.pause(); e.target.classList.remove('playing'); } } }), { threshold: .2 });
+    const vo = new IntersectionObserver(es => es.forEach(e => { if (!e.isIntersecting && isOn(e.target)) stopCard(e.target); }), { threshold: .2 });
     cards.forEach(c => vo.observe(c));
   }
 

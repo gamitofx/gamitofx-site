@@ -10,7 +10,7 @@ Site da GamitoFX. Responda em português; o site é em inglês (público gringo)
 - Nunca inventar números, depoimentos ou clientes. Vídeo de lead/cliente só entra com autorização por escrito (o spec da Krishi Ahuja depende disso).
 - Vídeo longo: YouTube não listado, ID em `data-yt` do botão `#lf-play`. Vazio = aviso "coming soon".
 - Vídeo curto: com `data-yt` no `.vc`, toca o YouTube dentro do card (botão do canto fecha); sem `data-yt`, toca o mp4 de `assets/video/`.
-- Domínio canônico TEMPORÁRIO: https://gamitofx.pages.dev, até o gamitofx.com ser comprado; aí trocar de volta com `grep -rl gamitofx.pages.dev . | xargs sed -i "s#https://gamitofx.pages.dev#https://gamitofx.com#g"` (usado em canonical, og:url, og:image, JSON-LD, sitemap, robots, llms.txt).
+- Domínio canônico: https://gamitofx.com (comprado no Cloudflare em 16/11/2026, ligado ao Pages; gamitofx.pages.dev continua respondendo). Usado em canonical, og:url, og:image, JSON-LD, sitemap, robots, llms.txt e privacy.html.
 - Vídeos curtos em mp4: H.264 720p, `-crf 26 -preset slow -movflags +faststart`, `preload="none"` e poster WebP. Quadros de storyboard em `assets/img/sb/`.
 - Ao mudar ou criar página: atualizar `sitemap.xml` (lastmod) e revisar visualmente em desktop e celular (360 px inclusive) antes de entregar.
 - Checklist completo de lançamento: skill `/site-lancamento` do gamitofx-estudio.

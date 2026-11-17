@@ -7,7 +7,7 @@ Site da GamitoFX. Responda em português; o site é em inglês (público gringo)
 - Estrutura v2 (11/11/2026, decisão `decisao-site-v2` no cérebro): primeira tela, vídeos longos com aba Storyboard, curtos com storyboard em folha (dados no JSON `#sb-data` do `index.html`), sobre, clientes, contato, rodapé. Celular primeiro; desktop a partir de 900 px.
 - **Nenhum valor no site** (nem no JSON-LD nem no `llms.txt`). Preço só na proposta.
 - Canal próprio do YouTube não aparece. LinkedIn e YouTube fora até ter posts.
-- Nunca inventar números, depoimentos ou clientes. Vídeo de lead/cliente só entra com autorização por escrito (o spec da Krishi Ahuja depende disso).
+- Nunca inventar números, depoimentos ou clientes. Vídeo de lead/cliente só entra com autorização por escrito (o spec da Krishi Ahuja dependia disso). EXCEÇÃO 17/11/2026: o João autorizou publicar o teaser da Krishi (3º short) sem o "sim" escrito dela; risco assumido por ele.
 - Vídeo longo: YouTube não listado, ID em `data-yt` do botão `#lf-play`. Vazio = aviso "coming soon".
 - Vídeo curto: com `data-yt` no `.vc`, toca o YouTube dentro do card (botão do canto fecha); sem `data-yt`, toca o mp4 de `assets/video/`.
 - Domínio canônico: https://gamitofx.com (comprado no Cloudflare em 16/11/2026, ligado ao Pages; gamitofx.pages.dev continua respondendo). Usado em canonical, og:url, og:image, JSON-LD, sitemap, robots, llms.txt e privacy.html.
